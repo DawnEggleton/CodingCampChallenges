@@ -1,0 +1,231 @@
+/*******************************
+    Challenge#006
+********************************/
+body#challenge006 {
+
+    .tab-label {
+        padding: 5px;
+        border-radius: 5px;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        text-align: center;
+        width: 28px;
+        height: 28px;
+        background: transparent;
+        border: none;
+        color: #a2a2a2;
+        font-size: 1em;
+        
+        &:not(.active) {
+            cursor: pointer;
+        }
+
+        &.active {
+            background-image: -webkit-radial-gradient(top left, #c4c4c4, #e1e1e1);
+            background-image: radial-gradient(at top left, #c4c4c4, #e1e1e1);
+            color: #222;
+        }
+    }
+    .tab-content {
+        display: none;
+        padding: 15px 55px 15px 65px;
+
+        @media only screen and (min-width: 580px) {
+            padding: 30px 70px 30px 70px;
+        }
+
+        &.active { 
+            display: block;
+        }
+
+        h1 {
+            font-family: 'Averia Serif Libre', serif;
+            font-size: 100px;
+            text-align: center;
+            color: #e1e1e1;
+            line-height: 1em;
+            margin: 30px 0 0 0;
+        }
+  
+        h2 {
+            display: grid;
+            grid-template-columns: 60px max-content 60px;
+            align-items: center;
+            grid-gap: 15px;
+            font-family: 'Averia Serif Libre', serif;
+            color: #e1e1e1;
+            letter-spacing: 2px;
+            font-size: 20px;
+            margin: 0 0 30px 0;
+
+            &:first-child {
+                margin-top: 30px;
+            }
+
+            &:before,
+            &:after {
+                content: '';
+                display: inline-block;
+                width: 60px;
+                height: 1px;
+                background: #6f6f6f;
+            }
+        }
+
+        .overview {
+            display: flex;
+            justify-content: space-around;
+            text-transform: uppercase;
+            font-size: 0.7em;
+            letter-spacing: 2.5px;
+            color: #e1e1e1;
+            margin: 15px 0 60px;
+
+            &-img {
+                display: block;
+                width: 100px;
+                height: 100px;
+                object-fit: contain;
+                margin: 30px auto 0;
+            }
+
+            b {
+                font-weight: 500;
+            }
+
+            a {
+                color: #e1e1e1;
+                background: radial-gradient(at top left, #313131, #222);
+                padding: 7px 15px;
+                border-radius: 5px;
+                font-size: 1em;
+            }
+
+            & ~ p {
+                font-size: 14px;
+                line-height: 200%;
+                text-align: justify;
+                max-width: 400px;
+                margin: 0 auto 30px;
+            }
+        }
+  
+    }
+
+    .splide {
+        height: 200px;
+
+        &__arrow {
+            top: 100px;
+            background: radial-gradient(at top left, #d1d1d1, #b2b2b2);
+            border: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 20px;
+            align-items: center;
+            text-align: center;
+            justify-items: center;
+            box-shadow: 1px 1px 4px #0f0f0f;
+        }
+
+        button:not(:disabled) {
+            display: grid;
+        }
+
+        &__slide {
+            background-image: -webkit-radial-gradient(top left, #606060, #939393);
+            background-image: radial-gradient(at top left, #606060, #939393);
+            border-radius: 10px;
+            padding: 30px;
+            color: #222;
+            text-transform: uppercase;
+            line-height: 100%;
+            display: flex;
+            align-items: center;
+
+            .slide__content {
+                width: 100%;
+            }
+
+            .viewLink {
+                position: absolute;
+                bottom: 30px;
+                right: 30px;
+                background: radial-gradient(at top left, #3e3e3e, #262626);
+            }
+
+            h3 {
+                margin: 0 0 15px 0;
+                font-size: 2.7em;
+                font-family: 'Averia Serif Libre', serif;
+                text-transform: none;
+                font-weight: 700;
+                line-height: 1em;
+            }
+
+            .challenge-stats {
+                display: flex;
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+            span {
+                margin: 0;
+                font-size: 0.7em;
+                letter-spacing: 1px;
+                font-weight: 600;
+            }
+
+            &.inc {
+                opacity: 0.3;
+            }
+
+            .complete {
+                display: inline-block;
+                width: 9px;
+                height: 9px;
+                border-radius: 50%;
+                border: 1px solid #646464;
+                background: #919191;
+                bottom: -1px;
+                margin-left: 5px;
+            }
+
+            &.com .complete {
+                background: #91b52f;
+                border-color: #566f14;
+            }
+
+            .type:empty,
+            .series:empty {
+                display: none;
+            }
+
+            &.s-low .spec:after,
+            &.d-low .diff:after {
+                content: 'L';
+            }
+
+            &.s-med .spec:after,
+            &.d-med .diff:after {
+                content: 'M';
+            }
+
+            &.s-high .spec:after,
+            &.d-high .diff:after {
+                content: 'H';
+            }
+        }
+    }
+
+    .slider-block {
+        margin-bottom: 30px;
+
+        &:not(:last-child) {
+            margin-bottom: 60px;
+        }
+    }
+
+}

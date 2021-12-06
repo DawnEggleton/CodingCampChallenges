@@ -6,6 +6,15 @@ document.addEventListener('DOMContentLoaded', function() {
             perPage: 3,
             perMove: 1,
             pagination: false,
+            gap: '30px',
+            breakpoints: {
+                1200: {
+                    perPage: 2,
+                },
+                900: {
+                    perPage: 1,
+                }
+            }
         }).mount();
     }
 

@@ -19,22 +19,27 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     color: #a2a2a2;
-    font-family: 'Raleway', sans-serif;
-    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
     font-weight: 400;
     line-height: 160%;
 }
 
 nav {
     position: fixed;
-    top: 30px;
-    left: 30px;
+    top: 15px;
+    left: 15px;
     background-image: -webkit-radial-gradient(top left, #222, #2d2d2d);
     background-image: radial-gradient(at top left, #222, #2d2d2d);
     box-shadow: 1px 1px 4px #0f0f0f;
     padding: 15px;
     border-radius: 15px;
     z-index: 10;
+
+    @media only screen and (min-width: 580px) {
+        top: 30px;
+        left: 30px;
+    }
 
     ul {
         list-style-type: none;
@@ -57,38 +62,21 @@ nav {
 }
 
 section {
-    margin: 60px;
     background-image: -webkit-radial-gradient(top left, #2d2d2d, #3e3e3e);
     background-image: radial-gradient(at top left, #2d2d2d, #3e3e3e);
     box-shadow: 1px 1px 4px #0f0f0f;
     padding: 60px;
     border-radius: 15px;
-}
+    margin: 40px;
 
-h2, h3, h4, h5, h6 {
-    color: #222;
-    margin: 0 0 15px 0;
-    font-weight: 300;
-    background-image: -webkit-radial-gradient(top left, #c4c4c4, #e1e1e1);
-    background-image: radial-gradient(at top left, #c4c4c4, #e1e1e1);
-    max-width: max-content;
-    border-radius: 5px;
-}
-
-h2 {
-    padding: 10px 15px;
-    font-size: 1.125em;
-    letter-spacing: 3px;
-    margin-left: -15px;
+    @media only screen and (min-width: 580px) {
+        margin: 60px;
+    }
 }
 
 .splide {
     button:disabled {
         display: none;
-    }
-
-    &:not(:last-child) {
-        margin-bottom: 60px;
     }
 
     &__track {
@@ -110,12 +98,42 @@ h2 {
 
         &--prev {
             left: 0;
-            transform: translateX(-50%);
+            transform: translateX(-50%) translateY(-50%);
+
+            i {
+                right: 1px;
+            }
         }
 
         &--next {
             right: 0;
-            transform: translateX(50%);
+            transform: translateX(50%) translateY(-50%);
+
+            i {
+                left: 1px;
+            }
         }
     }
+}
+
+.credit {
+    margin-top: 60px;
+    text-align: right;
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    a {
+        color: #a2a2a2;
+    }
+}
+
+.btn {
+    background: radial-gradient(at top left, #313131, #222);
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: #e1e1e1;
+    font-size: 0.7em;
+    letter-spacing: 2px;
+    font-weight: 500;
 }
