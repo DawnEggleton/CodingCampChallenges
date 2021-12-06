@@ -5,6 +5,7 @@
 * {
     position: relative;
     box-sizing: border-box;
+    z-index: 1;
 }
 a {
     text-decoration: none;
@@ -12,10 +13,109 @@ a {
 body {
     padding: 0;
     margin: 0;
+    background-image: -webkit-radial-gradient(top left, #151515, #2d2d2d);
+    background-image: radial-gradient(at top left, #151515, #2d2d2d);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #a2a2a2;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%;
+}
+
+nav {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    background-image: -webkit-radial-gradient(top left, #222, #2d2d2d);
+    background-image: radial-gradient(at top left, #222, #2d2d2d);
+    box-shadow: 1px 1px 4px #0f0f0f;
+    padding: 15px;
+    border-radius: 15px;
+    z-index: 10;
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        text-align: center;
+        grid-gap: 15px;
+
+        li {
+            a {
+                color: #a2a2a2;
+
+                &:hover {
+                    color: #e1e1e1;
+                }
+            }
+        }
+    }
+}
+
+section {
+    margin: 60px;
+    background-image: -webkit-radial-gradient(top left, #2d2d2d, #3e3e3e);
+    background-image: radial-gradient(at top left, #2d2d2d, #3e3e3e);
+    box-shadow: 1px 1px 4px #0f0f0f;
+    padding: 60px;
+    border-radius: 15px;
+}
+
+h2, h3, h4, h5, h6 {
+    color: #222;
+    margin: 0 0 15px 0;
+    font-weight: 300;
+    background-image: -webkit-radial-gradient(top left, #c4c4c4, #e1e1e1);
+    background-image: radial-gradient(at top left, #c4c4c4, #e1e1e1);
+    max-width: max-content;
+    border-radius: 5px;
+}
+
+h2 {
+    padding: 10px 15px;
+    font-size: 1.125em;
+    letter-spacing: 3px;
+    margin-left: -15px;
 }
 
 .splide {
     button:disabled {
         display: none;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 60px;
+    }
+
+    &__track {
+        height: 100%;
+    }
+
+    &__arrows {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+    }
+
+    &__arrow {
+        position: absolute;
+        transform: translateY(-50%);
+        cursor: pointer;
+
+        &--prev {
+            left: 0;
+            transform: translateX(-50%);
+        }
+
+        &--next {
+            right: 0;
+            transform: translateX(50%);
+        }
     }
 }

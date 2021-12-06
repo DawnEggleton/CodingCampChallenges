@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         new Splide(elms[i], {
             perPage: 3,
             perMove: 1,
+            pagination: false,
         }).mount();
     }
 
