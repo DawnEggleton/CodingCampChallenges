@@ -18,8 +18,21 @@ body {
   margin: 0;
 }
 
+.splide button:disabled {
+  display: none;
+}
+
 /*******************************
     Challenge#006
 ********************************/
+body#challenge006 .tab-label.active {
+  color: red;
+}
+body#challenge006 .tab-content {
+  display: none;
+}
+body#challenge006 .tab-content.active {
+  display: initial;
+}
 
 /*# sourceMappingURL=styles.css.map */

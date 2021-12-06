@@ -2,5 +2,17 @@
     Challenge#006
 ********************************/
 body#challenge006 {
-    //tbd
+
+    .tab-label {
+        &.active {
+            color: red;
+        }
+    }
+    .tab-content {
+        display: none;
+        &.active { 
+            display: initial;
+        }
+    }
+
 }

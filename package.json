@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@splidejs/splide": "^3.6.9",
     "node-sass": "^6.0.1",
     "prefix": "^1.0.0"
   }
