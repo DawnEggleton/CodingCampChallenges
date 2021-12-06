@@ -1,5 +1,5 @@
 const tabs = document.querySelectorAll('.tab-content');
-const labels = document.querySelectorAll('.tab-label');
+const labels = document.querySelectorAll('button.tab-label');
 tabs[0].classList.add('active');
 labels[0].classList.add('active');
 labels[0].setAttribute('disabled', true);

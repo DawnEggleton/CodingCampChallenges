@@ -29,6 +29,11 @@ body {
   line-height: 160%;
 }
 
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
 nav {
   position: fixed;
   top: 15px;
@@ -127,12 +132,10 @@ section {
   font-size: 0.7em;
   letter-spacing: 2px;
   font-weight: 500;
+  text-transform: uppercase;
 }
 
-/*******************************
-    Challenge#006
-********************************/
-body#challenge006 .tab-label {
+.tab-label {
   padding: 5px;
   border-radius: 5px;
   display: grid;
@@ -146,35 +149,36 @@ body#challenge006 .tab-label {
   color: #a2a2a2;
   font-size: 1em;
 }
-body#challenge006 .tab-label:not(.active) {
+.tab-label:not(.active) {
   cursor: pointer;
 }
-body#challenge006 .tab-label.active {
+.tab-label.active {
   background-image: -webkit-radial-gradient(top left, #c4c4c4, #e1e1e1);
   background-image: radial-gradient(at top left, #c4c4c4, #e1e1e1);
   color: #222;
 }
-body#challenge006 .tab-content {
+
+.tab-content {
   display: none;
   padding: 15px 55px 15px 65px;
 }
 @media only screen and (min-width: 580px) {
-  body#challenge006 .tab-content {
+  .tab-content {
     padding: 30px 70px 30px 70px;
   }
 }
-body#challenge006 .tab-content.active {
+.tab-content.active {
   display: block;
 }
-body#challenge006 .tab-content h1 {
+.tab-content h1 {
   font-family: "Averia Serif Libre", serif;
-  font-size: 100px;
+  font-size: 60px;
   text-align: center;
   color: #e1e1e1;
   line-height: 1em;
   margin: 30px 0 0 0;
 }
-body#challenge006 .tab-content h2 {
+.tab-content h2 {
   display: grid;
   grid-template-columns: 60px max-content 60px;
   align-items: center;
@@ -185,17 +189,17 @@ body#challenge006 .tab-content h2 {
   font-size: 20px;
   margin: 0 0 30px 0;
 }
-body#challenge006 .tab-content h2:first-child {
+.tab-content h2:first-child {
   margin-top: 30px;
 }
-body#challenge006 .tab-content h2:before, body#challenge006 .tab-content h2:after {
+.tab-content h2:before, .tab-content h2:after {
   content: "";
   display: inline-block;
   width: 60px;
   height: 1px;
   background: #6f6f6f;
 }
-body#challenge006 .tab-content .overview {
+.tab-content .overview {
   display: flex;
   justify-content: space-around;
   text-transform: uppercase;
@@ -204,34 +208,168 @@ body#challenge006 .tab-content .overview {
   color: #e1e1e1;
   margin: 15px 0 60px;
 }
-body#challenge006 .tab-content .overview-img {
+.tab-content .overview-img {
   display: block;
   width: 100px;
   height: 100px;
   object-fit: contain;
   margin: 30px auto 0;
 }
-body#challenge006 .tab-content .overview b {
+.tab-content .overview b {
   font-weight: 500;
 }
-body#challenge006 .tab-content .overview a {
+.tab-content .overview a {
   color: #e1e1e1;
   background: radial-gradient(at top left, #313131, #222);
   padding: 7px 15px;
   border-radius: 5px;
   font-size: 1em;
 }
-body#challenge006 .tab-content .overview ~ p {
+.tab-content .overview ~ p {
   font-size: 14px;
   line-height: 200%;
   text-align: justify;
   max-width: 400px;
   margin: 0 auto 30px;
 }
-body#challenge006 .splide {
+.tab-content .challenge-box {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-gap: 30px;
+}
+.tab-content .challenge-box .deets {
+  display: grid;
+  grid-gap: 15px;
+}
+.tab-content .challenge-box .deets ul {
+  background-image: -webkit-radial-gradient(top left, #606060, #939393);
+  background-image: radial-gradient(at top left, #606060, #939393);
+  border-radius: 10px;
+  padding: 15px;
+  margin: 0;
+  list-style-type: none;
+  line-height: 200%;
+  font-size: 0.85em;
+  letter-spacing: 1px;
+  color: #222;
+}
+.tab-content .challenge-box .deets ul > b {
+  display: grid;
+  grid-template-columns: 30px max-content 30px;
+  grid-gap: 7px;
+  color: #222;
+  font-family: "Averia Serif Libre", serif;
+  font-size: 14px;
+  align-items: center;
+}
+.tab-content .challenge-box .deets ul > b:before, .tab-content .challenge-box .deets ul > b:after {
+  content: "";
+  height: 1px;
+  width: 30px;
+  background: #424242;
+}
+.tab-content .challenge-box .deets ul.inspo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  line-height: 100%;
+}
+.tab-content .challenge-box .deets ul.inspo a {
+  display: inline-block;
+}
+.tab-content .challenge-box .deets ul.inspo > b {
+  flex-basis: 100%;
+  margin-bottom: 7px;
+}
+.tab-content .challenge-box .deets ul.req li, .tab-content .challenge-box .deets ul.bonus li {
+  display: grid;
+  grid-template-columns: 9px auto;
+  grid-gap: 7px;
+}
+.tab-content .challenge-box .deets ul.req li:before, .tab-content .challenge-box .deets ul.bonus li:before {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  bottom: -4px;
+  background: #91b52f;
+  border: 1px solid #566f14;
+  position: relative;
+}
+.tab-content .challenge-box .deets ul.req li:not(.complete) span, .tab-content .challenge-box .deets ul.bonus li:not(.complete) span {
+  opacity: 0.5;
+}
+.tab-content .challenge-box .deets ul.req li:not(.complete):before, .tab-content .challenge-box .deets ul.bonus li:not(.complete):before {
+  border-color: #646464;
+  background: #919191;
+}
+.tab-content .challenge-box .result {
+  background-image: -webkit-radial-gradient(top left, #606060, #939393);
+  background-image: radial-gradient(at top left, #606060, #939393);
+  border-radius: 15px;
+  padding: 15px 15px 65px 15px;
+  color: #0b0b0b;
+}
+@media only screen and (min-width: 580px) {
+  .tab-content .challenge-box .result {
+    padding: 30px 30px 80px 30px;
+  }
+}
+.tab-content .challenge-box .result p {
+  font-size: 16px;
+  line-height: 200%;
+  margin: 0 0 30px 0;
+}
+.tab-content .challenge-box .result p:last-child {
+  margin-bottom: 0;
+}
+.tab-content .challenge-box .result .viewLink {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: radial-gradient(at top left, #3e3e3e, #262626);
+  text-transform: uppercase;
+}
+.tab-content .challenge-box .result .image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 150px);
+  grid-gap: 15px;
+}
+.tab-content .challenge-box .result .image-grid a {
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
+}
+.tab-content .challenge-box .result .image-grid a img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sl-wrapper + .sl-overlay {
+  background: #000 !important;
+}
+.sl-wrapper .sl-close,
+.sl-wrapper .sl-navigation button,
+.sl-wrapper .sl-counter {
+  color: #a2a2a2 !important;
+}
+
+/*******************************
+    Challenge#006
+********************************/
+body#c6.idx h1 {
+  font-size: 100px;
+}
+body#c6 .splide {
   height: 200px;
 }
-body#challenge006 .splide__arrow {
+body#c6 .splide__arrow {
   top: 100px;
   background: radial-gradient(at top left, #d1d1d1, #b2b2b2);
   border: 0;
@@ -244,10 +382,10 @@ body#challenge006 .splide__arrow {
   justify-items: center;
   box-shadow: 1px 1px 4px #0f0f0f;
 }
-body#challenge006 .splide button:not(:disabled) {
+body#c6 .splide button:not(:disabled) {
   display: grid;
 }
-body#challenge006 .splide__slide {
+body#c6 .splide__slide {
   background-image: -webkit-radial-gradient(top left, #606060, #939393);
   background-image: radial-gradient(at top left, #606060, #939393);
   border-radius: 10px;
@@ -258,16 +396,16 @@ body#challenge006 .splide__slide {
   display: flex;
   align-items: center;
 }
-body#challenge006 .splide__slide .slide__content {
+body#c6 .splide__slide .slide__content {
   width: 100%;
 }
-body#challenge006 .splide__slide .viewLink {
+body#c6 .splide__slide .viewLink {
   position: absolute;
   bottom: 30px;
   right: 30px;
   background: radial-gradient(at top left, #3e3e3e, #262626);
 }
-body#challenge006 .splide__slide h3 {
+body#c6 .splide__slide h3 {
   margin: 0 0 15px 0;
   font-size: 2.7em;
   font-family: "Averia Serif Libre", serif;
@@ -275,21 +413,21 @@ body#challenge006 .splide__slide h3 {
   font-weight: 700;
   line-height: 1em;
 }
-body#challenge006 .splide__slide .challenge-stats {
+body#c6 .splide__slide .challenge-stats {
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
 }
-body#challenge006 .splide__slide span {
+body#c6 .splide__slide span {
   margin: 0;
   font-size: 0.7em;
   letter-spacing: 1px;
   font-weight: 600;
 }
-body#challenge006 .splide__slide.inc {
+body#c6 .splide__slide.inc {
   opacity: 0.3;
 }
-body#challenge006 .splide__slide .complete {
+body#c6 .splide__slide .complete {
   display: inline-block;
   width: 9px;
   height: 9px;
@@ -299,27 +437,27 @@ body#challenge006 .splide__slide .complete {
   bottom: -1px;
   margin-left: 5px;
 }
-body#challenge006 .splide__slide.com .complete {
+body#c6 .splide__slide.com .complete {
   background: #91b52f;
   border-color: #566f14;
 }
-body#challenge006 .splide__slide .type:empty,
-body#challenge006 .splide__slide .series:empty {
+body#c6 .splide__slide .type:empty,
+body#c6 .splide__slide .series:empty {
   display: none;
 }
-body#challenge006 .splide__slide.s-low .spec:after, body#challenge006 .splide__slide.d-low .diff:after {
+body#c6 .splide__slide.s-low .spec:after, body#c6 .splide__slide.d-low .diff:after {
   content: "L";
 }
-body#challenge006 .splide__slide.s-med .spec:after, body#challenge006 .splide__slide.d-med .diff:after {
+body#c6 .splide__slide.s-med .spec:after, body#c6 .splide__slide.d-med .diff:after {
   content: "M";
 }
-body#challenge006 .splide__slide.s-high .spec:after, body#challenge006 .splide__slide.d-high .diff:after {
+body#c6 .splide__slide.s-high .spec:after, body#c6 .splide__slide.d-high .diff:after {
   content: "H";
 }
-body#challenge006 .slider-block {
+body#c6 .slider-block {
   margin-bottom: 30px;
 }
-body#challenge006 .slider-block:not(:last-child) {
+body#c6 .slider-block:not(:last-child) {
   margin-bottom: 60px;
 }
 
